@@ -8,8 +8,8 @@ import millify from 'millify';
 
 import DefaultImage from '../assets/images/house.jpg'
 
-const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalId } }) => (
-    <Link href={`/property/${externalId}`} passHref>
+const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, baths, area, agency, isVerified, externalID } }) => (
+    <Link href={`/property/${externalID}`} passHref>
         <Flex flexWrap="wrap" w="420px" p="5" paddingTop="0" justifyContent="flex-start" cursor="pointer">
             <Box>
                 <Image src={coverPhoto ? coverPhoto.url : DefaultImage} width={400} height={260} alt="house" />
@@ -26,7 +26,7 @@ const Property = ({ property: { coverPhoto, price, rentFrequency, rooms, title, 
                     </Box>
                 </Flex>
                 <Flex alignItems="center" p="1" justifyContent="space-between" w="250px" color="blue.400">
-                    {rooms} <FaBed/> | {baths} <FaBath/> | {millify(area)} sqft <BsGridFill/>
+                    {rooms} <FaBed/> | {baths} <FaBath/> | {millify(area)} m2 <BsGridFill/>
                 </Flex>
                 <Text fontSize="lg">
                     {title.length > 30 ? `${title.substring(0,30)}...` : title}
